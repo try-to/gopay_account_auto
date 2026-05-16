@@ -109,8 +109,16 @@ Step 1: hero-sms 取号
 Step 2: 注册/登录 GoPay 钱包
 ============================================================
 [2/5] 注册/登录 +628123456789 (PIN=123456)...
+[gopay-signup] 触发注册 SMS OTP
+[gopay-signup] 等待注册 SMS OTP...
   [signup-otp] 等待第 1 次 SMS 验证码 (timeout=300s)...
   [signup-otp] 收到验证码: 123456
+[gopay-signup] 注册 OTP 验证成功
+[gopay-signup] 设置 PIN: 123456
+[gopay-signup] 等待 PIN 设置 SMS OTP (尝试 1/3)...
+  [pin-setup-otp] 等待第 1 次 SMS 验证码 (timeout=300s)...
+  [pin-setup-otp] 收到验证码: 654321
+[gopay-signup] PIN 设置成功
 [3/5] 注册成功!
        phone: +628123456789
        pin: 123456

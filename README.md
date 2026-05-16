@@ -14,6 +14,10 @@
 
 完整文档和代码请查看 dev 分支。
 
+## 💬 交流沟通
+
+欢迎加入 Telegram 群组交流讨论：https://t.me/trytovv_ai
+
 ## License
 
 MIT License

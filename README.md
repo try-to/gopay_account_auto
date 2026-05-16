@@ -12,7 +12,7 @@
 
 ## 📖 文档
 
-完整文档和代码请查看 [dev 分支](https://github.com/try-to/gopay_account_auto/tree/dev)。
+完整文档和代码请查看 dev 分支。
 
 ## License
 

@@ -211,7 +211,28 @@ def auto_login(
     if not access_token:
         raise GoPayAccountError(f"token 换取失败")
 
-    log(f"[gopay-login] 登录成功")
+    log(f"[gopay-login] 登录成功，检查 PIN 状态...")
+
+    # 检查是否需要设置 PIN
+    try:
+        _setup_pin(
+            access_token=access_token,
+            pin=pin,
+            otp_provider=otp_provider,
+            gopay_cfg=cfg,
+            session=session,
+            log=log,
+            pre_otp_hook=None,
+        )
+        log(f"[gopay-login] PIN 设置成功")
+    except GoPayAccountError as e:
+        # 如果 PIN 已设置，会返回错误，这是正常的
+        if "already" in str(e).lower() or "exist" in str(e).lower():
+            log(f"[gopay-login] PIN 已设置，跳过")
+        else:
+            # 其他错误则抛出
+            raise
+
     result = GoPayAccountResult()
     result.access_token = access_token
     result.refresh_token = refresh_token

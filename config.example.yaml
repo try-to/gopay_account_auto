@@ -1,0 +1,29 @@
+# GoPay Account Auto 配置模板
+# 复制此文件为 config.yaml 并填写实际配置
+
+# hero-sms 接码平台配置
+hero_sms:
+  enabled: true
+  api_key: "YOUR_HERO_SMS_API_KEY"  # 在 https://hero-sms.com 注册并获取
+  base_url: "https://api.hero-sms.com"
+  country: 6  # 印尼国家代码
+  service: "ni"  # GoPay 服务代码（印尼）
+  poll_timeout_sec: 300  # 等待验证码超时时间（秒）
+  max_price: 10.0  # 单次接码最高价格（美元）
+  min_balance: 5.0  # 最低余额警告（美元）
+
+# 代理配置（GoPay 注册需要印尼 IP）
+proxy: "http://127.0.0.1:7890"  # 印尼代理地址
+
+# GoPay 账号配置
+account_pay:
+  GoPay:
+    # 节日红包配置
+    festival_envelope:
+      enabled: true
+      short_link: "https://gopay.co.id/xxx"  # 红包短链（从活动页面获取）
+
+    # 注册配置
+    signup:
+      default_pin: "123456"  # 默认 PIN 码（6位数字）
+      country_code: "+62"  # 印尼国家代码
